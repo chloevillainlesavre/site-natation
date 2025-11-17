@@ -1,39 +1,176 @@
-<!DOCTYPE html> 
-<html lang="fr"> 
-  <head> 
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <link rel="stylesheet" href="styles.css"> 
-    
-    <title>Club de Natation</title> 
-  </head>
-  <body> 
-    <header> 
-      <h1>Club de Natation</h1>
-      <nav> 
-        <ul> 
-          <li><a href="#accueil">Accueil</a>
-          </li> 
-          <li><a href="#apropos">À propos</a>
-          </li> 
-          <li><a href="#galerie">Galerie</a>
-          </li> 
-          <li><a href="#boutique">Boutique</a>
-          </li> 
-          <li><a href="#contact">Contact</a>
-          </li> 
-        </ul> 
-      </nav> 
-    </header> 
-    
-    <section id="accueil">
-      <h2>Bienvenue au Club de Natation</h2> 
-      <p>Le Club de Natation vous accueille dans une ambiance sportive et conviviale. Que vous soyez débutant ou confirmé, venez nager, progresser et partager votre passion avec nous. Entraînements réguliers, esprit d’équipe et bonne humeur garantis !</p>
-    </section>
-    <section id="apropos"> 
-      <h2>À propos du club</h2>
-      <p>Au Club de Natation, chacun trouve sa place : que vous veniez pour le plaisir de nager ou pour viser les podiums, nos entraîneurs vous accompagnent dans une ambiance motivante et bienveillante, adaptée à tous les âges et tous les niveaux.</p> 
-      
-      <!-- (Ici viennent les groupes d'entraînement) -->
-    </section>
-    <section id="entrainements"> <h2>Nos Entraînements</h2> <h3>🏆 Groupes Compétition</h3> <div class="groupe avenir"> <h4>Avenirs (8–10 ans)</h4> <p>Objectif : apprentissage technique et premières compétitions.</p> <ul> <li>Lundi : 17h00 – 18h00</li> <li>Mercredi : 17h00 – 18h00</li> <li>Vendredi : 17h00 – 18h00</li> <li>Samedi : 9h00 – 10h00</li> </ul> </div> <div class="groupe benjamin"> <h4>Benjamins (11–13 ans)</h4> <p>Objectif : perfectionnement et compétitions départementales/régionales.</p> <ul> <li>Lundi : 18h00 – 19h30</li> <li>Mardi : 18h00 – 19h30</li> <li>Mercredi : 18h00 – 19h30</li> <li>Vendredi : 18h00 – 19h30</li> <li>Samedi : 10h00 – 11h30</li> </ul> </div> <div class="groupe elite"> <h4>Élite (14–18 ans)</h4> <p>Objectif : compétitions nationales, entraînement intensif.</p> <ul> <li>Lundi : 19h30 – 21h00</li> <li>Mardi : 19h30 – 21h00</li> <li>Mercredi : 19h30 – 21h00</li> <li>Jeudi : 19h30 – 21h00</li> <li>Vendredi : 19h30 – 21h00</li> <li>Samedi : 11h30 – 13h00</li> </ul> </div> <div class="groupe master"> <h4>Masters (18 ans et +)</h4> <p>Objectif : compétitions adultes, maintien du niveau.</p> <ul> <li>Mardi : 20h00 – 21h00</li> <li>Jeudi : 20h00 – 21h00</li> <li>Samedi : 13h00 – 14h00</li> </ul> </div> <h3>🌊 Groupes Loisirs</h3> <div class="groupe loisirs-enfants"> <h4>Enfants Loisirs (6–10 ans)</h4> <p>Objectif : découverte de la natation, jeux aquatiques et progression douce.</p> <ul> <li>Mercredi : 14h00 – 15h00</li> <li>Samedi : 9h00 – 10h00</li> </ul> </div> <div class="groupe loisirs-ados"> <h4>Ados Loisirs (11–15 ans)</h4> <p>Objectif : natation plaisir, technique sans compétition.</p> <ul> <li>Mercredi : 15h00 – 16h00</li> <li>Samedi : 10h00 – 11h00</li> </ul> </div> <div class="groupe loisirs-adultes"> <h4>Adultes Loisirs (16 ans et +)</h4> <p>Objectif : remise en forme, détente et plaisir de nager.</p> <ul> <li>Lundi : 20h00 – 21h00</li> <li>Vendredi : 20h00 – 21h00</li> </ul> </div> </section> <section id="galerie"> <h2>Galerie</h2> <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Photo 1" /> <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Photo 2" /> <img src="https://via.placeholder.com/300x200?text=Photo+3" alt="Photo 3" /> </section> <section id="boutique"> <h2>Boutique du Club</h2> <p>Retrouvez nos articles aux couleurs du club pour soutenir votre équipe et nager avec style !</p> <div class="produit" onclick="ouvrirPopup('popup-tshirt')"> <img src="https://via.placeholder.com/200x200?text=T-shirt+Club" alt="T-shirt Club" /> <h3>T-shirt Officiel</h3> <p>Prix : 15€</p> </div> <div class="produit" onclick="ouvrirPopup('popup-bonnet')"> <img src="https://via.placeholder.com/200x200?text=Bonnet+Natation" alt="Bonnet Natation" /> <h3>Bonnet de Natation</h3> <p>Prix : 8€</p> </div> <div class="produit" onclick="ouvrirPopup('popup-sac')"> <img src="https://via.placeholder.com/200x200?text=Sac+Club" alt="Sac Club" /> <h3>Sac de Sport</h3> <p>Prix : 25€</p> </div> </section> <!-- Popups --> <div id="popup-tshirt" class="popup"> <div class="popup-contenu"> <span class="fermer" onclick="fermerPopup('popup-tshirt')">&times;</span> <img src="https://via.placeholder.com/400x400?text=T-shirt+Club" alt="T-shirt Club" /> <h3>T-shirt Officiel</h3> <p>T-shirt en coton, disponible en tailles S à XL. Idéal pour représenter le club lors des compétitions ou en dehors du bassin.</p> </div> </div> <div id="popup-bonnet" class="popup"> <div class="popup-contenu"> <span class="fermer" onclick="fermerPopup('popup-bonnet')">&times;</span> <img src="https://via.placeholder.com/400x400?text=Bonnet+Natation" alt="Bonnet Natation" /> <h3>Bonnet de Natation</h3> <p>Bonnet en silicone, taille unique. Résistant et confortable pour tous les entraînements.</p> </div> </div> <div id="popup-sac" class="popup"> <div class="popup-contenu"> <span class="fermer" onclick="fermerPopup('popup-sac')">&times;</span> <img src="https://via.placeholder.com/400x400?text=Sac+Club" alt="Sac Club" /> <h3>Sac de Sport</h3> <p>Sac imperméable avec compartiments. Parfait pour transporter votre équipement de natation.</p> </div> </div> <section id="contact"> <h2>Contact</h2> <form> <label for="nom">Nom :</label> <input type="text" id="nom" name="nom" required /> <label for="email">Email :</label> <input type="email" id="email" name="email" required /> <label for="message">Message :</label> <textarea id="message" name="message" required></textarea> <button type="submit">Envoyer</button> </form> </section> <footer> <p>&copy; 2025 Club de Natation</p> </footer> <script src="script.js"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Club de Natation</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Club de Natation</h1>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#boutique">Boutique</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ACCUEIL -->
+  <section id="accueil">
+    <h2>Bienvenue au Club de Natation</h2>
+    <p>
+      Le Club de Natation vous accueille dans une ambiance sportive et conviviale.
+      Que vous soyez débutant ou confirmé, venez nager, progresser et partager votre passion avec nous.
+      Entraînements réguliers, esprit d’équipe et bonne humeur garantis !
+    </p>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos">
+    <h2>À propos du club</h2>
+    <p>
+      Au Club de Natation, chacun trouve sa place : que vous veniez pour le plaisir de nager
+      ou pour viser les podiums, nos entraîneurs vous accompagnent dans une ambiance motivante
+      et bienveillante, adaptée à tous les âges et tous les niveaux.
+    </p>
+  </section>
+
+  <!-- ENTRAÎNEMENTS -->
+  <section id="entrainements">
+    <h2>Nos Entraînements</h2>
+
+    <h3>🏆 Groupes Compétition</h3>
+    <div class="groupe avenir">
+      <h4>Avenirs (8–10 ans)</h4>
+      <p>Objectif : apprentissage technique et premières compétitions.</p>
+      <ul>
+        <li>Lundi : 17h00 – 18h00</li>
+        <li>Mercredi : 17h00 – 18h00</li>
+        <li>Vendredi : 17h00 – 18h00</li>
+        <li>Samedi : 9h00 – 10h00</li>
+      </ul>
+    </div>
+
+    <div class="groupe benjamin">
+      <h4>Benjamins (11–13 ans)</h4>
+      <p>Objectif : perfectionnement et compétitions départementales/régionales.</p>
+      <ul>
+        <li>Lundi : 18h00 – 19h30</li>
+        <li>Mardi : 18h00 – 19h30</li>
+        <li>Mercredi : 18h00 – 19h30</li>
+        <li>Vendredi : 18h00 – 19h30</li>
+        <li>Samedi : 10h00 – 11h30</li>
+      </ul>
+    </div>
+
+    <div class="groupe elite">
+      <h4>Élite (14–18 ans)</h4>
+      <p>Objectif : compétitions nationales, entraînement intensif.</p>
+      <ul>
+        <li>Lundi : 19h30 – 21h00</li>
+        <li>Mardi : 19h30 – 21h00</li>
+        <li>Mercredi : 19h30 – 21h00</li>
+        <li>Jeudi : 19h30 – 21h00</li>
+        <li>Vendredi : 19h30 – 21h00</li>
+        <li>Samedi : 11h30 – 13h00</li>
+      </ul>
+    </div>
+
+    <div class="groupe master">
+      <h4>Masters (18 ans et +)</h4>
+      <p>Objectif : compétitions adultes, maintien du niveau.</p>
+      <ul>
+        <li>Mardi : 20h00 – 21h00</li>
+        <li>Jeudi : 20h00 – 21h00</li>
+        <li>Samedi : 13h00 – 14h00</li>
+      </ul>
+    </div>
+
+    <h3>🌊 Groupes Loisirs</h3>
+    <div class="groupe loisirs-enfants">
+      <h4>Enfants Loisirs (6–10 ans)</h4>
+      <p>Objectif : découverte de la natation, jeux aquatiques et progression douce.</p>
+      <ul>
+        <li>Mercredi : 14h00 – 15h00</li>
+        <li>Samedi : 9h00 – 10h00</li>
+      </ul>
+    </div>
+
+    <div class="groupe loisirs-ados">
+      <h4>Ados Loisirs (11–15 ans)</h4>
+      <p>Objectif : natation plaisir, technique sans compétition.</p>
+      <ul>
+        <li>Mercredi : 15h00 – 16h00</li>
+        <li>Samedi : 10h00 – 11h00</li>
+      </ul>
+    </div>
+
+    <div class="groupe loisirs-adultes">
+      <h4>Adultes Loisirs (16 ans et +)</h4>
+      <p>Objectif : remise en forme, détente et plaisir de nager.</p>
+      <ul>
+        <li>Lundi : 20h00 – 21h00</li>
+        <li>Vendredi : 20h00 – 21h00</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Photo 1" />
+    <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Photo 2" />
+    <img src="https://via.placeholder.com/300x200?text=Photo+3" alt="Photo 3" />
+  </section>
+
+  <!-- BOUTIQUE -->
+  <section id="boutique">
+    <h2>Boutique du Club</h2>
+    <p>Retrouvez nos articles aux couleurs du club pour soutenir votre équipe et nager avec style !</p>
+
+    <div class="produit" onclick="ouvrirPopup('popup-tshirt')">
+      <img src="https://via.placeholder.com/200x200?text=T-shirt+Club" alt="T-shirt Club" />
+      <h3>T-shirt Officiel</h3>
+      <p>Prix : 15€</p>
+    </div>
+
+    <div class="produit" onclick="ouvrirPopup('popup-bonnet')">
+      <img src="https://via.placeholder.com/200x200?text=Bonnet+Natation" alt="Bonnet Natation" />
+      <h3>Bonnet de Natation</h3>
+      <p>Prix : 8€</p>
+    </div>
+
+    <div class="produit" onclick="ouvrirPopup('popup-sac')">
+      <img src="https://via.placeholder.com/200x200?text=Sac+Club" alt="Sac Club" />
+      <h3>Sac de Sport</h3>
+      <p>Prix : 25€</p>
+    </div>
+  </section>
+
+  <!-- POPUPS PRODUITS -->
+  <div id="popup-tshirt" class="popup">
+    <div class="popup-contenu">
+      <span class="fermer" onclick="fermerPopup('popup-tshirt')">&times;</span>
+      <img src="https://via.placeholder.com/400x400?text=T-shirt+Club" alt="T-shirt Club" />
+      <h3>T-shirt Officiel</h3>
+      <p>T-shirt en coton, disponible en tailles XS à XL. Idéal pour représenter le club lors des compétitions ou en dehors du bassin.</p>
+    </div>
+  </div>
+
+  <div id="popup-bonnet" class="popup">
+    <div class="popup-contenu">
+      <span class="fermer" onclick="fermerPopup('popup-bonnet')">&times;</span>
+      <img src="https://via.placeholder.com/400x400?text=Bonnet+Natation" alt="Bonnet Natation" />
+      <h3>Bonnet de Natation</h3>
+      <p>Bonnet en silicone, taille unique. Résistant et confortable pour tous les entraînements.</p>
+    </div>
+  </div>
+
+  <div id="popup-sac" class="popup">
+    <div class="popup-contenu
