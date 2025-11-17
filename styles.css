@@ -3,7 +3,12 @@ body {
   margin: 0;
   background-color: #e0f7fa;
   color: #004d40;
-}
+/* Image de fond */
+  background-image: url("photopiscinefond.jpeg")
+  background-size: cover;       /* l’image couvre tout l’écran */
+  background-position: center;  /* centrée */
+  background-attachment: fixed; /* effet "parallaxe" */
+}  
 
 header {
   background-color: #006064;
