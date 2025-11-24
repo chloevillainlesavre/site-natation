@@ -1,76 +1,140 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #e0f7fa;
-  color: #004d40;
-}  
-header {
-  /* Image de fond */
-  background-image: url("photopiscinefond.jpeg"); /* mets ton image ici */
-  background-size: cover;       /* l’image couvre toute la largeur */
-  background-position: center;  /* centrée */
-  background-repeat: no-repeat; /* pas de répétition */
-
-  /* Style du texte */
-  color: white;
-  padding: 2em;
-  text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: #0a1f3a;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    border-bottom: 2px solid #b8dfff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    z-index: 20;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 26px;
+    color: #0077ff;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #0a1f3a;
+    font-weight: 600;
 }
 
-section {
-  padding: 2em;
+#hero {
+    padding: 150px 40px 100px;
+    background: linear-gradient(180deg, #d5eeff, white);
+    text-align: center;
 }
 
-footer {
-  background-color: #004d40;
-  color: white;
-  text-align: center;
-  padding: 1em;
+.section {
+    padding: 100px 40px;
 }
 
-/* Groupes d'entraînement */
-.groupe {
-  padding: 1em;
-  margin-bottom: 1.5em;
-  border-left: 6px solid #006064;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #0077ff;
 }
 
-.avenir { border-left-color: #0288d1; }
-.benjamin { border-left-color: #00796b; }
-.elite { border-left-color: #5e35b1; }
-.master { border-left-color: #f57c00; }
-
-/* Loisirs avec couleurs distinctes */
-.loisirs-enfants { border-left-color: #ff6f61; }   /* rouge corail */
-.loisirs-ados { border-left-color: #4caf50; }      /* vert */
-.loisirs-adultes { border-left-color: #9c27b0; }   /* violet */
-
-/* Galerie */
-#galerie img {
-  margin: 1em;
-  width: 300px;
-  height: auto;
+.card-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* Boutique */
-#boutique {
-  background-color: #f0f8ff;
+.card {
+    background: #f0f9ff;
+    padding: 20px;
+    border-radius: 14px;
+    border: 2px solid #badeff;
+    cursor: pointer;
+    transition: transform .3s, background .3s;
 }
 
-.produit {
-  display: inline-block;
+.card:hover {
+    transform: scale(1.04);
+    background: #e0f3ff;
+}
+
+/* BUBBLES */
+.bubble-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.bubble {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bubble:nth-child(2) { animation-delay: .4s; }
+.bubble:nth-child(3) { animation-delay: .8s; }
+.bubble:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.bubble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.popup-content {
+    background: white;
+    padding: 25px;
+    max-width: 600px;
+    border-radius: 15px;
+    text-align: center;
+    animation: zoom .3s ease;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#popupImg {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#closePopup {
+    float: right;
+    font-size: 32px;
+    cursor: pointer;
+}
