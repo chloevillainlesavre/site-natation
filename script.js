@@ -8,7 +8,7 @@ document.querySelectorAll("nav a").forEach(link => {
     });
 });
 
-// POPUP
+// POPUP SYSTEM
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
 
