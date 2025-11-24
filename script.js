@@ -1,23 +1,28 @@
-document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Merci pour votre message ! Nous vous répondrons bientôt.");
+// Smooth scroll
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
 });
-function ouvrirPopup(id) {
-  document.getElementById(id).style.display = "block";
-}
 
-function fermerPopup(id) {
-  document.getElementById(id).style.display = "none";
-}
-function ouvrirPopup(id) {
-  document.getElementById(id).style.display = "block";
-}
+// POPUP
+const popup = document.getElementById("popup");
+const closePopup = document.getElementById("closePopup");
 
-function fermerPopup(id) {
-  document.getElementById(id).style.display = "none";
-}
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+        document.getElementById("popupTitle").textContent = card.dataset.title;
+        document.getElementById("popupText").textContent = card.dataset.text;
+        document.getElementById("popupImg").src = card.dataset.img;
+        popup.style.display = "flex";
+    });
+});
 
-document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Merci pour votre message ! Nous vous répondrons bientôt.");
+closePopup.addEventListener("click", () => popup.style.display = "none");
+
+popup.addEventListener("click", e => {
+    if (e.target === popup) popup.style.display = "none";
 });
