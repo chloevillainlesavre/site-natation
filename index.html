@@ -1,52 +1,157 @@
-let currentImages = [];
-let currentIndex = 0;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Natation – Performances & Compétitions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-const cards = document.querySelectorAll(".card, .card.nage");
-const popup = document.getElementById("popup");
-const popupImg = document.getElementById("popupImg");
-const popupTitle = document.getElementById("popupTitle");
-const popupText = document.getElementById("popupText");
-const closePopup = document.getElementById("closePopup");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
+<header>
+    <h1 class="logo">Blog Natation</h1>
+    <nav>
+        <a href="#actus">Actualités</a>
+        <a href="#past">Compétitions Passées</a>
+        <a href="#future">À Venir</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#nages">4 Nages</a>
+    </nav>
+</header>
 
-cards.forEach(card => {
-    card.addEventListener("click", () => {
-        currentImages = JSON.parse(card.getAttribute("data-images"));
-        currentIndex = 0;
-        popupImg.src = currentImages[currentIndex];
-        popupTitle.textContent = card.getAttribute("data-title");
-        popupText.textContent = card.getAttribute("data-text");
-        popup.style.display = "flex";
-        updateCarouselButtons();
-    });
-});
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-overlay">
+        <h2>Performance</h2>
+        <h2>Passion</h2>
+        <h2>Résultats</h2>
+    </div>
+</section>
 
-closePopup.addEventListener("click", () => { popup.style.display = "none"; });
-window.addEventListener("click", (e) => { if(e.target === popup) popup.style.display = "none"; });
+<!-- La natation : un sport complet -->
+<section class="section reveal">
+    <div class="block-text-img">
+        <div class="text">
+            <h3 class="section-title">La natation : un sport complet</h3>
+            <p>La natation combine technique, force, endurance, respiration et précision. Chaque nage développe un aspect différent : puissance, vitesse, technique ou endurance.</p>
+        </div>
+        <div class="image">
+            <img src="placeholder.jpg" alt="Natation illustration">
+        </div>
+    </div>
+</section>
 
-function updateCarouselButtons() {
-    prevBtn.style.display = currentImages.length > 1 ? "block" : "none";
-    nextBtn.style.display = currentImages.length > 1 ? "block" : "none";
-}
+<!-- Comment s’entraîne un nageur ? -->
+<section class="section reveal center-text">
+    <h3 class="section-title">Comment s’entraîne un nageur ?</h3>
+    <ul class="big-list">
+        <li>Travail technique</li>
+        <li>Travail de vitesse</li>
+        <li>Endurance</li>
+        <li>Renforcement hors de l’eau</li>
+        <li>Analyse vidéo</li>
+    </ul>
+</section>
 
-prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-    popupImg.src = currentImages[currentIndex];
-});
+<!-- Actualités -->
+<section id="actus" class="section reveal">
+    <h3 class="section-title">Actualités</h3>
+    <div class="card-grid">
+        <div class="card" data-title="Nouvelle saison" data-images='["https://picsum.photos/500","https://picsum.photos/501"]' data-text="Objectifs, planning, préparation physique et techniques modernes pour une saison ambitieuse.">
+            <h4>Nouvelle saison</h4>
+            <p>Objectifs & axes de travail.</p>
+        </div>
+    </div>
+</section>
 
-nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    popupImg.src = currentImages[currentIndex];
-});
+<!-- Compétitions passées -->
+<section id="past" class="section reveal">
+    <h3 class="section-title">Compétitions Passées</h3>
+    <div class="card-grid">
+        <div class="card" data-title="Interclubs 2025" data-images='["interclub.jpg","interclub2.jpg"]' data-text="De nombreux records personnels battus et une montée en puissance sur plusieurs épreuves.">
+            <h4>Meeting Régional</h4>
+            <p>Points forts & analyses.</p>
+        </div>
+        <div class="card" data-title="Départementaux Jeunes" data-images='["https://picsum.photos/502","https://picsum.photos/503"]' data-text="Un groupe motivé et des résultats très encourageants pour les prochaines échéances.">
+            <h4>Départementaux Jeunes</h4>
+            <p>Progression & podiums.</p>
+        </div>
+    </div>
+</section>
 
-// Fade-in animations
-const revealElements = document.querySelectorAll(".section, .card, .bubble, .block-text-img");
-function revealOnScroll() {
-    revealElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 80) el.classList.add("visible");
-    });
-}
-revealOnScroll();
-window.addEventListener("scroll", revealOnScroll);
+<!-- Comment lire les résultats -->
+<section class="section reveal center-text">
+    <h3 class="section-title">Comment lire les résultats d’une compétition ?</h3>
+    <ul class="big-list">
+        <li>Le temps réalisé</li>
+        <li>Le passage intermédiaire à mi-course</li>
+        <li>La vitesse de nage</li>
+        <li>La maîtrise des virages et des coulées</li>
+        <li>Le classement</li>
+    </ul>
+</section>
+
+<!-- Compétitions à venir -->
+<section id="future" class="section reveal">
+    <h3 class="section-title">Compétitions à Venir</h3>
+    <div class="card-grid">
+        <div class="card" data-title="Open d’Hiver" data-images='["afficheffn.jpg"]' data-text="Un rendez-vous clé pour tester vitesse et gestion de course.">
+            <h4>Open d’Hiver</h4>
+        </div>
+        <div class="card" data-title="Meeting International" data-images='["Meeting.png"]' data-text="Compétition de haut niveau pour tester le mental et la stratégie.">
+            <h4>Meeting International</h4>
+        </div>
+    </div>
+</section>
+
+<!-- Galerie -->
+<section id="gallery" class="section reveal">
+    <h3 class="section-title">Galerie</h3>
+    <div class="bubble-gallery">
+        <div class="bubble"><img src="depart.jpeg" alt=""></div>
+        <div class="bubble"><img src="photoserie.jpeg" alt=""></div>
+        <div class="bubble"><img src="photodedos.jpeg" alt=""></div>
+        <div class="bubble"><img src="Seriebrasse.png" alt=""></div>
+    </div>
+</section>
+
+<!-- 4 Nages expliquées -->
+<section id="nages" class="section reveal">
+    <h3 class="section-title">4 Nages Expliquées</h3>
+    <div class="card-grid">
+        <div class="card nage" data-title="Papillon" data-images='["papillon1.jpg"]' data-text="Le papillon est puissant et exigeant. Épreuves : 50, 100, 200 m.">
+            <h4>Papillon</h4>
+        </div>
+        <div class="card nage" data-title="Dos" data-images='["dos1.jpg"]' data-text="Le dos nécessite technique et rotation. Épreuves : 50, 100, 200, 400 m.">
+            <h4>Dos</h4>
+        </div>
+        <div class="card nage" data-title="Brasse" data-images='["brasse1.jpg"]' data-text="La brasse demande synchronisation bras/jambes et respiration. Épreuves : 50, 100, 200, 400 m.">
+            <h4>Brasse</h4>
+        </div>
+        <div class="card nage" data-title="Nage Libre" data-images='["nl1.jpg"]' data-text="La nage libre privilégie vitesse et glisse. Épreuves : 50, 100, 200, 400, 800, 1500 m.">
+            <h4>Nage Libre</h4>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Blog Natation – Performance & Passion</p>
+</footer>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span id="closePopup">&times;</span>
+        <div id="carousel">
+            <img id="popupImg">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+        <h2 id="popupTitle"></h2>
+        <p id="popupText"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
