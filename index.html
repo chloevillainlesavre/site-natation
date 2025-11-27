@@ -1,92 +1,52 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Natation – Performances & Compétitions</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+let currentImages = [];
+let currentIndex = 0;
 
-<header>
-    <h1 class="logo">Blog Natation</h1>
-    <nav>
-        <a href="#actus">La natation</a>
-        <a href="#past">Compétitions Passées</a>
-        <a href="#future">À Venir</a>
-        <a href="#gallery">Galerie</a>
-    </nav>
-</header>
+const cards = document.querySelectorAll(".card, .card.nage");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popupImg");
+const popupTitle = document.getElementById("popupTitle");
+const popupText = document.getElementById("popupText");
+const closePopup = document.getElementById("closePopup");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
 
-<section id="hero">
-    <div class="hero-overlay">
-        <h2>Performance</h2>
-        <h2>Passion</h2>
-        <h2>Résultats</h2>
-    </div>
-</section>
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        currentImages = JSON.parse(card.getAttribute("data-images"));
+        currentIndex = 0;
+        popupImg.src = currentImages[currentIndex];
+        popupTitle.textContent = card.getAttribute("data-title");
+        popupText.textContent = card.getAttribute("data-text");
+        popup.style.display = "flex";
+        updateCarouselButtons();
+    });
+});
 
-<section id="actus" class="section">
-    <h3 class="section-title">La natation</h3>
-    <div class="card-grid">
-        <div class="card" data-title="Decouvrez les specalites des nos nageurs cette saison" data-img="https://picsum.photos/500" data-text="Objectifs, planning, préparation physique et techniques modernes pour une saison ambitieuse.">
-            <h4>Nouvelle saison</h4>
-            <p>Objectifs & axes de travail.</p>
-        </div>
-    </div>
-</section>
+closePopup.addEventListener("click", () => { popup.style.display = "none"; });
+window.addEventListener("click", (e) => { if(e.target === popup) popup.style.display = "none"; });
 
-<section id="past" class="section">
-    <h3 class="section-title">Compétitions Passées</h3>
-    <div class="card-grid">
-        <div class="card" data-title="Interclubs 2025" data-img="interclub.jpg" data-text="De nombreux records personnels battus et une montée en puissance sur plusieurs épreuves.">
-            <h4>Meeting Régional</h4>
-            <p>Points forts & analyses.</p>
-        </div>
-        <div class="card" data-title="Départementaux Jeunes" data-img="https://picsum.photos/502" data-text="Un groupe motivé et des résultats très encourageants pour les prochaines échéances.">
-            <h4>Départementaux Jeunes</h4>
-            <p>Progression & podiums.</p>
-        </div>
-    </div>
-</section>
+function updateCarouselButtons() {
+    prevBtn.style.display = currentImages.length > 1 ? "block" : "none";
+    nextBtn.style.display = currentImages.length > 1 ? "block" : "none";
+}
 
-<section id="future" class="section">
-    <h3 class="section-title">Compétitions à Venir</h3>
-    <div class="card-grid">
-        <div class="card" data-title="Open d’Hiver" data-img="afficheffn.jpg" data-text="Un rendez-vous clé pour tester vitesse et gestion de course.">
-            <h4>Open d’Hiver</h4>
-            <p>Objectif vitesse.</p>
-        </div>
-        <div class="card" data-title="Meeting International" data-img="Meeting.png" data-text="Compétition de haut niveau pour tester le mental et la stratégie.">
-            <h4>Meeting International</h4>
-            <p>Challenge élite.</p>
-        </div>
-    </div>
-</section>
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    popupImg.src = currentImages[currentIndex];
+});
 
-<section id="gallery" class="section">
-    <h3 class="section-title">Galerie</h3>
-    <div class="bubble-gallery">
-        <div class="bubble"><img src="depart.jpeg" alt=""></div>
-        <div class="bubble"><img src="photoserie.jpeg" alt=""></div>
-        <div class="bubble"><img src="photodedos.jpeg" alt=""></div>
-        <div class="bubble"><img src="Seriebrasse.png""></div>
-    </div>
-</section>
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    popupImg.src = currentImages[currentIndex];
+});
 
-<footer>
-    <p>© 2025 Blog Natation – Performance & Passion</p>
-</footer>
-
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <span id="closePopup">&times;</span>
-        <img id="popupImg">
-        <h2 id="popupTitle"></h2>
-        <p id="popupText"></p>
-    </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+// Fade-in animations
+const revealElements = document.querySelectorAll(".section, .card, .bubble, .block-text-img");
+function revealOnScroll() {
+    revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 80) el.classList.add("visible");
+    });
+}
+revealOnScroll();
+window.addEventListener("scroll", revealOnScroll);
